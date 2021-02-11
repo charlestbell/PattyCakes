@@ -7,7 +7,7 @@ const connection = mysql.createConnection({
   user: "root",
   // NOTE: Be sure to add your MySQL password here!
   password: process.env.SQL_PASSWORD,
-  database: "burgers_db",
+  database: "burger_db",
 });
 
 connection.connect((err) => {
