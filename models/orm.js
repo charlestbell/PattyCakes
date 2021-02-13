@@ -7,14 +7,15 @@ const connection = require("../config/connection.js");
 // These help avoid SQL injection
 // https://en.wikipedia.org/wiki/SQL_injection
 const orm = {
-  selectWhere(tableInput, colToSearch, valOfCol) {
-    const queryString = "SELECT * FROM ?? WHERE ?? = ?";
+  selectDateNull(tableInput, colToSearch, valOfCol) {
+    const queryString = "SELECT * FROM ?? WHERE ?? IS NULL";
     connection.query(
       queryString,
       [tableInput, colToSearch, valOfCol],
       (err, result) => {
         if (err) throw err;
         console.log(result);
+        return results;
       }
     );
   },

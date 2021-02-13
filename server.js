@@ -1,5 +1,3 @@
-const orm = require("./models/orm.js");
-
 // On
 // orm.selectAndOrder("animal_name", "pets", "price");
 
@@ -8,5 +6,3 @@ const orm = require("./models/orm.js");
 
 // Find the buyer with the most pets.
 // orm.findWhoHasMost("buyer_name", "buyer_id", "buyers", "pets");
-
-orm.selectWhere("burgers", "when_devoured", "NULL");
