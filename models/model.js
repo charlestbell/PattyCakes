@@ -1,16 +1,10 @@
-const orm = require("./models/orm.js");
+const orm = require("../config/orm.js");
 
-module.exports = burger = {
-    getUndevourded = async () => {
-        try {
-         const notDevourde = await orm.selectNotDevoured("burgers", "when_devoured");
-        }
-        catch(resuts) {
-        
-        }
-        },
-}
-
+const burger = {
+  async get() {
+    return await orm.getAllBurgers("burgers", "when_devoured");
+  },
+};
 // On
 // orm.selectAndOrder("animal_name", "pets", "price");
 
@@ -20,5 +14,6 @@ module.exports = burger = {
 // Find the buyer with the most pets.
 // orm.findWhoHasMost("buyer_name", "buyer_id", "buyers", "pets");
 
+// burger.selectNotDevoured();
 
-burger.getUndevourded()
+module.exports = burger;

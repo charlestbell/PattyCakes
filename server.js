@@ -1,8 +1,25 @@
-// On
-// orm.selectAndOrder("animal_name", "pets", "price");
+const express = require("express");
+const exphbs = require("express-handlebars");
+require("dotenv").config();
 
-// Find a pet in the pets table by an animal_name of Rachel.
-// orm.selectWhere("pets", "animal_name", "Rachel");
+// Sets up the Express App
+const app = express();
+const PORT = process.env.PORT;
 
-// Find the buyer with the most pets.
-// orm.findWhoHasMost("buyer_name", "buyer_id", "buyers", "pets");
+// Requiring our models for syncing
+
+// Sets up the Express app to handle data parsing
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
+
+// Static directory
+// app.use(express.static("public"));
+
+//Set up handlebars
+app.engine("handlebars", exphbs({ defaultLayout: "main" }));
+
+// Routes
+require("./routes/api-routes.js")(app);
+
+// Syncing our sequelize models and then starting our Express app
+app.listen(PORT, () => console.log(`Listening on PORT ${PORT}`));
