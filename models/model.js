@@ -1,8 +1,8 @@
 const orm = require("../config/orm.js");
 
 const burger = {
-  async get() {
-    return await orm.getAllBurgers("burgers", "when_devoured");
+  get(cb) {
+    orm.getAllBurgers("burgers", (res) => cb(res));
   },
 };
 // On
@@ -17,3 +17,9 @@ const burger = {
 // burger.selectNotDevoured();
 
 module.exports = burger;
+
+// printBurgers = async () => {
+//   await burger.get((data) => {
+//     console.log("burger.get ", data);
+//   });
+// };

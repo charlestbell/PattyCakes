@@ -1,1 +1,15 @@
-app.get("/pattycakes", (req, res) => res.render("pattycakes", animals[0]));
+const exphbs = require("express-handlebars");
+const db = require("../models/model");
+
+module.exports = (app) => {
+  app.get("/", (req, res) => {
+    db.get((data) => {
+      console.log("public-routes ", data);
+      const hbsObject = {
+        cats: data,
+      };
+      console.log("hbsObject", hbsObject);
+      res.render("index", hbsObject);
+    });
+  });
+};
