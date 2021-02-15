@@ -25,7 +25,6 @@ const objToSql = (ob) => {
         value = `'${value}'`;
       }
       // e.g. {name: 'Lana Del Grey'} => ["name='Lana Del Grey'"]
-      // e.g. {sleepy: true} => ["sleepy=true"]
       arr.push(`${key}=${value}`);
     }
   }
@@ -80,7 +79,3 @@ const orm = {
 };
 
 module.exports = orm;
-
-// testObj = { when_devoured: "2021" };
-// sqlized = objToSql(testObj);
-// console.log("sequelized", sqlized);

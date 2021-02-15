@@ -5,7 +5,7 @@ module.exports = (app) => {
   app.get("/", (req, res) => {
     db.get((data) => {
       const hbsObject = {
-        cats: data,
+        burgers: data,
       };
       res.render("index", hbsObject);
     });

@@ -9,7 +9,7 @@ module.exports = (app) => {
     const condition = req.params.id;
     db.update(
       {
-        when_devoured: req.body.sleepy,
+        when_devoured: req.body.when_devoured,
       },
       condition,
       (result) => {
