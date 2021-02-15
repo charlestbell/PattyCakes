@@ -1,19 +1,47 @@
-li {
-  padding: 5px;
-  margin: 5px;
-  background: #faebd7;
+body {
+  background-color: #f5daa6;
+}
+h1,
+h3,
+h4,
+h5 {
+  color: maroon;
 }
 
-.label {
-  font-weight: bold;
+.header {
+  background-color: #f6c76c;
+  /* flex-direction: ltr; */
+  justify-content: center;
+  text-align: center;
+}
+.flex {
+  display: flex;
+}
+.content {
+  background-color: #f6c76c;
+}
+.listItem {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: baseline;
+}
+#title {
+  margin: 0 auto;
+}
+#title {
+  background-color: #f6c76c!;
+}
+#inputForm {
+  height: 50px;
+  align-items: baseline;
+  justify-content: center;
+}
+#textBox {
+  width: 300px;
+  margin-right: 10px;
 }
 
-.create-update-form {
-  padding: 5px;
-  margin: 5px;
-  background: aqua;
-}
-
-.form-group {
-  margin-bottom: 5px;
+.ml-3 {
+  margin-left: 15px !important;
 }
