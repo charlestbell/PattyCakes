@@ -32,12 +32,12 @@ h5 {
 #title {
   background-color: #f6c76c!;
 }
-#inputForm {
+#create-form {
   height: 50px;
   align-items: baseline;
   justify-content: center;
 }
-#textBox {
+.textBox {
   width: 300px;
   margin-right: 10px;
 }

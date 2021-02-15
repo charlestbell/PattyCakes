@@ -57,10 +57,30 @@ const orm = {
       cb(result);
     });
   },
+  create(table, cols, vals, cb) {
+    let queryString = `INSERT INTO ${table}`;
+
+    queryString += " (";
+    queryString += cols.toString();
+    queryString += ") ";
+    queryString += "VALUES (";
+    queryString += printQuestionMarks(vals.length);
+    queryString += ") ";
+
+    console.log(queryString);
+
+    connection.query(queryString, vals, (err, result) => {
+      if (err) {
+        throw err;
+      }
+
+      cb(result);
+    });
+  },
 };
 
 module.exports = orm;
 
-testObj = { when_devoured: "2021" };
-sqlized = objToSql(testObj);
-console.log("sequelized", sqlized);
+// testObj = { when_devoured: "2021" };
+// sqlized = objToSql(testObj);
+// console.log("sequelized", sqlized);

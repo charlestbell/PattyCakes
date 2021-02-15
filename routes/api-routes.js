@@ -4,8 +4,7 @@ module.exports = (app) => {
   app.get("/api/burgers", (req, res) => {
     db.get().then((allBurgers) => res.json(allBurgers));
   });
-};
-module.exports = (app) => {
+
   app.put("/api/burgers/:id", (req, res) => {
     const condition = req.params.id;
     db.update(
@@ -19,6 +18,18 @@ module.exports = (app) => {
           return res.status(404).end();
         }
         res.status(200).end();
+      }
+    );
+  });
+
+  app.post("/api/burgers", (req, res) => {
+    console.log("Post Request", req);
+    db.create(
+      ["burger_name", "when_devoured"],
+      [req.body.name, req.body.sleepy],
+      (result) => {
+        // Send back the ID of the new quote
+        res.json({ id: result.insertId });
       }
     );
   });

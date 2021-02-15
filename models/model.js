@@ -7,6 +7,9 @@ const burger = {
   update(objColVals, condition, cb) {
     orm.update("burgers", objColVals, condition, (res) => cb(res));
   },
+  create(cols, vals, cb) {
+    orm.create("burgers", cols, vals, (res) => cb(res));
+  },
 };
 // On
 // orm.selectAndOrder("animal_name", "pets", "price");
