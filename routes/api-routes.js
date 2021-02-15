@@ -23,7 +23,6 @@ module.exports = (app) => {
   });
 
   app.post("/api/burgers", (req, res) => {
-    console.log("Post Request", req);
     db.create(
       ["burger_name", "when_devoured"],
       [req.body.name, req.body.sleepy],
