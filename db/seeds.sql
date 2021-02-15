@@ -1,5 +1,5 @@
 USE burger_db;
-INSERT INTO burgers (burger_name, when_devoured) VALUES ('Whataburger', null),('Double Double With Grilled Onions', null),('Quarter Pounder With Cheese', null), ('Happy Meal', 11/12/2020);
+INSERT INTO burgers (burger_name, when_devoured) VALUES ('Mr Beast Burger', null),('Double Double With Grilled Onions', null),('Quarter Pounder With Cheese', null), ('5 Guys', '0000-00-00 00:00:00'), ('Heidleburger', '0000-00-00 00:00:00');
 
 
 SELECT *

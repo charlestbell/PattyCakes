@@ -24,7 +24,8 @@ h5 {
   margin-top: 10px;
   margin-bottom: 10px;
   display: flex;
-  justify-content: baseline;
+  justify-content: space-between;
+  align-items: baseline;
 }
 #title {
   margin: 0 auto;
