@@ -5,7 +5,21 @@ module.exports = (app) => {
     db.get().then((allBurgers) => res.json(allBurgers));
   });
 };
-// res.JSON(notDevoured);
-// } catch (error) {
-//   res.status(503).send("Failed to read from Database");
-// }
+module.exports = (app) => {
+  app.put("/api/burgers/:id", (req, res) => {
+    const condition = req.params.id;
+    db.update(
+      {
+        when_devoured: req.body.sleepy,
+      },
+      condition,
+      (result) => {
+        if (result.changedRows === 0) {
+          // If no rows were changed, then the ID must not exist, so 404
+          return res.status(404).end();
+        }
+        res.status(200).end();
+      }
+    );
+  });
+};

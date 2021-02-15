@@ -1,11 +1,13 @@
 <li>
 	<div class="row">
 		<div class="col listItem">
-			<h3>{{name}}</h3>
+			<h3>{{burger_name}}</h3>
 
-			<button class="change-sleep btn btn-danger ml-3" data-id="{{id}}" data-newsleep="{{sleep}}">
+			{{#unless devoured}}
+			<button class="devourIt btn btn-danger ml-3" data-id="{{burger_id}}" data-newsleep="{{devoured}}">
 				Devour it!
 			</button>
+			{{/unless}}
 		</div>
 	</div>
 </li>

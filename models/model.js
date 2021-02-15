@@ -2,7 +2,10 @@ const orm = require("../config/orm.js");
 
 const burger = {
   get(cb) {
-    orm.getAllBurgers("burgers", (res) => cb(res));
+    orm.get("burgers", (res) => cb(res));
+  },
+  update(objColVals, condition, cb) {
+    orm.update("burgers", objColVals, condition, (res) => cb(res));
   },
 };
 // On

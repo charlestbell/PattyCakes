@@ -25,19 +25,19 @@
   <div class="row">
     <!-- Left Column -->
     <div class="col content m-2 pt-3" style="height: 500px">
-      <div class="col-8 offset-sm-2">
-        <h5 style="text-align: center">Bucket List</h5>
 
-        <ul>
-          <ul>
-            {{#each cats}}
-            {{#unless sleepy}}
-            {{> cats/cat-block sleep=true}}
-            {{/unless}}
-            {{/each}}
-          </ul>
-        </ul>
-      </div>
+      <h5 style="text-align: center">Bucket List</h5>
+
+      <ul>
+
+        {{#each cats}}
+        {{#unless when_devoured}}
+        {{> cats/cat-block devoured=false}}
+        {{/unless}}
+        {{/each}}
+
+      </ul>
+
     </div>
     <!-- Right Column -->
     <div class="col content m-2 pt-3" style="height: 500px">
@@ -45,8 +45,8 @@
 
       <ul>
         {{#each cats}}
-        {{#if sleepy}}
-        {{> cats/cat-block sleep=false}}
+        {{#if when_devoured}}
+        {{> cats/cat-block devoured=true}}
         {{/if}}
         {{/each}}
       </ul>
